@@ -1,6 +1,6 @@
 {
   "name": "signalk-server",
-  "version": "1.37.3",
+  "version": "1.37.6",
   "description": "An implementation of a [Signal K](http://signalk.org) server for boats.",
   "main": "index.js",
   "scripts": {
@@ -121,10 +121,8 @@
   "optionalDependencies": {
     "@signalk/freeboard-sk": "^1.0.0",
     "@signalk/instrumentpanel": "0.x",
-    "@signalk/sailgauge": "^1.1.0",
     "@signalk/set-system-time": "^1.2.0",
     "@signalk/signalk-to-nmea0183": "^1.0.0",
-    "@signalk/simplegauges": "^1.0.1",
     "@signalk/vesselpositions": "^1.0.0",
     "@signalk/zones": "^1.0.0",
     "mdns": "^2.5.1",

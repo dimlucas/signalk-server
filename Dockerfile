@@ -2,7 +2,7 @@ ARG IMAGE_BASE=node
 FROM $IMAGE_BASE:10
 
 #COPY requires one valid argument, second can be nonexistent
-COPY empty_file tmp/qemu-arm-stati[c] /usr/bin/
+COPY empty_file tmp*/qemu-arm-stati[c] /usr/bin/
 
 RUN apt-get update && apt-get -y install libavahi-compat-libdnssd-dev
 
@@ -18,4 +18,5 @@ RUN mkdir -p /home/node/.signalk
 
 EXPOSE 3000
 ENV IS_IN_DOCKER true
+WORKDIR /home/node/.signalk
 ENTRYPOINT /home/node/signalk/bin/signalk-server --securityenabled

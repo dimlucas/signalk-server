@@ -137,6 +137,9 @@ class PrefsEditor extends Component {
   constructor(props) {
     super(props)
     this.state = { isOpen: false, sourceRefs: [] }
+    fetchSourceRefs(this.props.path, sourceRefs => {
+      this.setState({ sourceRefs })
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -318,7 +321,7 @@ class SourcePriorities extends Component {
     sourcePriorities.push({ path: '', priorities: [] })
     return (
       <Card>
-        <CardHeader>Source Priorities Settings <Badge color='danger'>Experimental</Badge></CardHeader>
+        <CardHeader>Source Priorities Settings</CardHeader>
         <CardBody>
           <Alert>
             <p>Use Source Priorities to filter incoming data so that data from lower priority sources is discarded when there is fresh data from some higher priority source.</p>
@@ -352,6 +355,7 @@ class SourcePriorities extends Component {
                     </td>
                     <td>
                       <PrefsEditor
+                        key={path}
                         path={path}
                         priorities={priorities}
                         dispatch={this.props.dispatch}
