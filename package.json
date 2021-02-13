@@ -17,6 +17,7 @@
     "test": "npm run build && npm run test-only && npm run lint",
     "typedoc": "typedoc",
     "heroku-postbuild": "npm run build",
+    "preinstall": "npm i -g typescript",
     "postinstall": "npm run build"
   },
   "bin": {
