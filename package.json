@@ -16,9 +16,7 @@
     "test-only": "mocha --timeout 10000 --exit 'test/**/*.js' 'lib/**/*.test.js'",
     "test": "npm run build && npm run test-only && npm run lint",
     "typedoc": "typedoc",
-    "heroku-postbuild": "npm run build",
-    "preinstall": "npm i -g typescript",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "bin": {
     "signalk-server": "./bin/signalk-server",
